@@ -15,7 +15,7 @@
           "threshold":""}
       ],
       "resource":[
-        {"path":"/home/ap/idcos/linux/network/SYSCHK_LINUX_CPUPROC.sh",
+        {"path":"/home/ap/idcos/linux/resource/SYSCHK_LINUX_CPUPROC.sh",
           "md5":"5332acecc27e6b2fa144d567a2754296",
           "threshold":{"PROCESS_TOP":"10"}
         }
