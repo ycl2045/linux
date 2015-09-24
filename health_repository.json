@@ -1,0 +1,25 @@
+{
+  "health":{
+    "linux":{
+      "filesys":[
+        {"path":"/home/ap/idcos/linux/filesys/SYSCHK_LINUX_CPUPROC_RES.sh",
+        "md5":"b4a928c2ffd35ea83aa519754c82ef1f",
+        "threshold":""}
+      ],
+      "network":[
+        {"path":"/home/ap/idcos/linux/network/SYSCHK_LINUX_LINKSTAT.sh",
+        "md5":"4532c19fb87fcf4b8f39c8345dc84259",
+         "threshold":""},
+        {"path":"/home/ap/idcos/linux/network/SYSCHK_LINUX_LOOPBACK.sh",
+         "md5":"1bdb9772b9f7bed145f54b1a3f1f024a",
+          "threshold":""}
+      ],
+      "resource":[
+        {"path":"/home/ap/idcos/linux/network/SYSCHK_LINUX_CPUPROC.sh",
+          "md5":"5332acecc27e6b2fa144d567a2754296",
+          "threshold":{"PROCESS_TOP":"10"}
+        }
+      ]
+    }
+  }
+}
