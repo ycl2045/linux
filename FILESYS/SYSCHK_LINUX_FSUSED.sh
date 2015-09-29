@@ -11,5 +11,5 @@
 export LANG=en_US.utf8
 
 #mount point和相关使用率百分比大小
-df -P|grep -ivE "Filesystem"|awk '{print "Filesystem:"$1,"Total:"$2,"Used:"$3,"Capacity:"$5}'
+df -P|grep -ivE "Filesystem"|awk '{print "Filesystem="$1,"Total="$2,"Used="$3,"Capacity="$5}'
 exit $?

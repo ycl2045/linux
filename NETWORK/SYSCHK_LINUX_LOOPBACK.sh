@@ -10,6 +10,6 @@
 #检查临时脚本输出目录是否存在
 export LANG=en_US.utf8
 
-cat /etc/hosts|egrep -v "#|::"|awk '$2 ~ /localhost/{print "localhost:"$1}'
+cat /etc/hosts|egrep -v "#|::"|awk '$2 ~ /localhost/{print "localhost="$1}'
 
 exit $?;

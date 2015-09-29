@@ -7,6 +7,16 @@
 scriptpath="/home/ap/idcos"
 cj="ocsinventory-agent"
 
+
+function a2A()
+{
+  echo $1|tr "[:lower:]" "[:upper:]"
+}
+
+function A2a()
+{
+  echo $1|tr "[:upper:]" "[:lower:]"
+}
 # Check command if or not exist in linux
 function isExist()
 {
@@ -25,9 +35,9 @@ function isUsed()
   cc=$(lsof |grep $1|wc -l)
   if [ $? -eq 0 ] && [ ${cc} -eq 0 ]
   then
-    echo "USED"
-  else
     echo "UNUSED"
+  else
+    echo "USED"
   fi
 
 }
@@ -41,7 +51,7 @@ function getOs()
 function rMfile()
 {
   local myfile=$1
-  if [ $(isUsed $myfile) -eq "USED" ]
+  if [ $(isUsed $myfile) == "USED" ]
   then
     rm -rf $myfile
   else
@@ -54,7 +64,8 @@ function main()
 {
   cd ${scriptpath}
   #uninstall cj
-  rMfile ${cj}
+  [ -d ${cj} ] && rMfile ${cj}
   #uninstall jc
-  rMfile getOs
+  jc=$(A2a getOs)
+  [ -d $jc ] && rMfile ${jc}
 }

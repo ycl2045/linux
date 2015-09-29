@@ -10,6 +10,6 @@
 #检查临时脚本输出目录是否存在
 export LANG=en_US.utf8
 
-netstat -an|grep "^tcp" |awk '{print "Proc:"$1,"Localaddr:"$4,"Foreignaddr:"$5,"State:"$6}'
+netstat -an|grep "^tcp" |awk '{print "Proc="$1,"Localaddr="$4,"Foreignaddr="$5,"State="$6}'
 
 exit $?;

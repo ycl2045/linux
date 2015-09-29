@@ -158,10 +158,32 @@ cat <<EOF
   }
 EOF
 }
+
+#install cmdb
+function installCmdb()
+{
+#init idcos environment
+mkdir /home/ap/idcos/{bin,ocsinventory-agent}
+cd $(dirname $0)
+cp -rf lib ${IDCOS_HOME}/ocsinventory-agent
+cp -rf cmd/ocsinventory-agent  ${IDCOS_HOME}/bin
+tar xf tool.tar -C ${IDCOS_HOME}
+cp tool/per5/bin/perl ${IDCOS_HOME}/bin
+
+echo "export PATH=$PATH:$IDCOS_HOME/bin" >> ~/.bash_profile
+cd ~
+. .bash_profile
+
+}
+
 # main
 function main()
 {
   cd $(dirname $0)
+
+  # install cmdb scripts
+
+  installCmdb
 
   # create unique hostid
   declare IDCOS='/home/ap/idcos'
