@@ -167,7 +167,7 @@ mkdir /home/ap/idcos/{bin,ocsinventory-agent}
 cd $(dirname $0)
 cp -rf lib ${IDCOS_HOME}/ocsinventory-agent
 cp -rf cmd/ocsinventory-agent  ${IDCOS_HOME}/bin
-tar xf tool.tar -C ${IDCOS_HOME}
+tar xjf tool.tar.gz -C ${IDCOS_HOME}
 cp tool/per5/bin/perl ${IDCOS_HOME}/bin
 
 echo "export PATH=$PATH:$IDCOS_HOME/bin" >> ~/.bash_profile
